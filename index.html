@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiki de Diseño</title>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: "Times New Roman", serif;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #ff4d4d;
+            padding: 15px 30px;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            background-color: #ff7373;
+            color: white;
+            border-radius: 12px;
+            padding: 20px 45px;
+            font-family: Arial, sans-serif;
+            font-size: 28px;
+        }
+
+        .top-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn, .bottom-btn {
+            background-color: #ffa5a5;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover, .bottom-btn:hover {
+            background-color: #ffffff;
+            color: #ff4d4d;
+        }
+
+        .search-bar {
+            background-color: #f2f2f2;
+            border: none;
+            padding: 10px;
+            border-radius: 12px;
+            width: 220px;
+            font-size: 15px;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            margin: 20px;
+            font-size: 18px;
+        }
+
+        .image-box {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .image-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        .section-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        h2, h3 {
+            color: #d63030;
+        }
+    </style>
+
+    <script>
+        function mostrarSeccion(id) {
+            const secciones = {
+
+                inicio: `
+                    <h2>Introducción a la Wiki</h2>
+
+                    <p>Este espacio fue creado para funcionar como un punto de referencia completo y accesible para cualquier persona interesada en el diseño visual, sin importar su nivel de experiencia. Su propósito principal es ofrecer explicaciones profundas y claras sobre conceptos fundamentales que construyen la base del diseño moderno. Aquí podrás aprender cómo se estructura una composición, cómo funciona el color, cómo se construyen tipografías efectivas, cómo nacen las ideas y cómo se aplican metodologías reales en estudios profesionales.</p>
+
+                    <p>La intención de este sitio es ayudarte a pensar como diseñador. No solo se busca que aprendas conceptos teóricos, sino que entiendas cómo aplicarlos en situaciones reales donde la comunicación visual es clave. El diseño no consiste solamente en estética: también involucra estrategia, narrativa, intención y una comprensión profunda del comportamiento humano. Cada sección ha sido escrita para que puedas captar la lógica detrás de las decisiones visuales, permitiéndote desarrollar criterio propio y no depender únicamente de tendencias.</p>
+
+                    <p>El contenido también aborda herramientas modernas utilizadas en la industria, desde programas de edición hasta software profesional especializado. Además, se explican procesos creativos que inician desde una idea abstracta hasta convertirse en un proyecto final funcional. Todo este conocimiento pretende darte una formación más completa y ayudarte a construir una visión integral sobre lo que significa diseñar en la actualidad.</p>
+
+                    <center>
+                        <div class="image-box">
+                            <img src="https://picsum.photos/300" />
+                            <p>Exploración visual contemporánea</p>
+                        </div>
+
+                        <div class="image-box">
+                            <img src="https://picsum.photos/301" />
+                            <p>Diseño minimalista aplicado</p>
+                        </div>
+
+                        <div class="image-box">
+                            <img src="https://picsum.photos/302" />
+                            <p>Combos tipográficos experimentales</p>
+                        </div>
+                    </center>
+					<br>
+                    <div class="section-buttons">
+                        <button class="bottom-btn" onclick="mostrarSeccion('herramientas')">Herramientas Digitales</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('procesos')">Procesos Creativos</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('metodologias')">Metodologías de Trabajo</button>
+                    </div>
+                `,
+
+                principios: `
+                    <h2>Principios del Diseño</h2>
+
+                    <p>Los principios del diseño son fundamentos invisibles que controlan la manera en que un espectador interpreta lo que ve. Aunque muchas veces no se perciben conscientemente, estos principios determinan si una composición es clara, confusa, armónica o desequilibrada. Se aplican en todas las áreas del diseño: gráfico, industrial, editorial, digital, publicitario y más. Son tan universales que funcionan incluso fuera del ámbito profesional, pues responden a mecanismos naturales de percepción visual.</p>
+
+                    <p>El balance establece la sensación de estabilidad dentro de una composición. No se trata únicamente de colocar elementos de manera uniforme, sino de lograr que el peso visual se distribuya de forma que el diseño se perciba agradable y comprensible. El contraste permite generar énfasis mediante diferencias notorias entre elementos, lo cual facilita destacar información y dirigir la mirada del espectador hacia puntos clave. El énfasis funciona como una guía visual que orienta la atención, evitando que el usuario se sienta perdido. El ritmo crea una sensación de movimiento y continuidad mediante repeticiones estratégicas, ayudando a que la lectura visual fluya sin interrupciones. Finalmente, la unidad asegura que todos los elementos convivan en armonía y parezcan parte de un mismo sistema visual coherente.</p>
+
+                    <p>Dominar estos principios no solo mejora la estética de un diseño, sino también su capacidad de comunicar. Un diseño bien construido transmite un mensaje con claridad, intención y personalidad. Cuando el diseñador comprende cómo aplicar estos principios de manera profunda, puede manipular emociones, dirigir comportamientos y crear soluciones visuales que funcionen tanto en contextos artísticos como en escenarios comerciales.</p>
+
+                    <br>
+                    <center>
+                        <div class="image-box">
+                            <img src="https://anasaci.com/blog/creativos/ejemplo-enfasis-1.webp"/>
+                        </div>
+                    </center>
+					<br>
+                    <div class="section-buttons">
+                        <button class="bottom-btn" onclick="mostrarSeccion('herramientas')">Herramientas Digitales</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('procesos')">Procesos Creativos</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('metodologias')">Metodologías de Trabajo</button>
+                    </div>
+                `,
+
+                color: `
+                    <h2>Teoría del Color</h2>
+
+                    <p>El color es uno de los elementos más poderosos en la comunicación visual, pues tiene la capacidad de influir en emociones, crear jerarquías y definir atmósferas dentro de una composición. Su uso consciente transforma completamente el significado de un diseño. Comprender cómo se comportan los colores entre sí y cómo reaccionan las personas ante ellos permite al diseñador tomar decisiones más profundas e intencionadas.</p>
+
+                    <p>Los colores primarios, secundarios y terciarios se combinan de manera estratégica para generar armonía o contraste, dependiendo de la intención del proyecto. Las armonías de color, ya sean complementarias, análogas, triádicas o incluso monocromáticas, permiten crear composiciones equilibradas que resultan agradables para la vista. Estas armonías son herramientas esenciales para generar sensaciones específicas, como energía, calma, dramatismo o neutralidad.</p>
+
+                    <p>La psicología del color estudia cómo los tonos afectan emocionalmente al espectador. Por ejemplo, los colores cálidos suelen transmitir energía, dinamismo o cercanía, mientras que los colores fríos comunican calma, seriedad o profesionalismo. El contexto cultural también influye en cómo se perciben los colores, pues cada sociedad asigna valores diferentes a ciertos tonos. Conocer estos significados permite crear mensajes visuales más efectivos y coherentes con los objetivos del proyecto.</p>
+
+                    <p>En el diseño profesional, el color se usa no solo para decorar sino para estructurar. Ayuda a separar secciones, resaltar información importante y fortalecer la identidad de una marca. Un diseñador con criterio cromático sólido puede dar vida a proyectos visualmente impactantes que comunican con claridad y personalidad.</p>
+
+                    <br>
+                    <center>
+                        <div class="image-box">
+                            <img src="https://hectorruizgolobart.com/imagenes/circulo-cromatico-1.png" width="650" height="400"/>
+                        </div>
+                    </center>
+					<br>
+
+                    <div class="section-buttons">
+                        <button class="bottom-btn" onclick="mostrarSeccion('herramientas')">Herramientas Digitales</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('procesos')">Procesos Creativos</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('metodologias')">Metodologías de Trabajo</button>
+                    </div>
+                `,
+
+                tipografia: `
+                    <h2>Tipografía</h2>
+
+                    <p>La tipografía es mucho más que la elección de una fuente; es la forma en que las palabras se convierten en imagen. Cada estilo tipográfico tiene una voz, una intención y un carácter propios. Cuando se selecciona adecuadamente, la tipografía refuerza el mensaje y mejora la legibilidad. Cuando se elige mal, puede confundir, saturar o incluso transmitir una emoción diferente a la que se busca comunicar.</p>
+
+                    <p>Las fuentes serif, con pequeños remates en sus terminaciones, ofrecen una sensación de elegancia, tradición y formalidad. Por eso se utilizan ampliamente en textos largos donde la lectura prolongada requiere comodidad. Las fuentes sans serif, al carecer de remates, se sienten modernas, limpias y tecnológicas, lo que las convierte en la base del diseño digital contemporáneo. Las tipografías script imitan trazos manuales y transmiten naturalidad, creatividad o sofisticación, aunque deben usarse con moderación para mantener la legibilidad.</p>
+
+                    <p>La jerarquía tipográfica establece niveles de importancia mediante tamaño, grosor, interlineado y estilo. Esta jerarquía guía al lector, permitiéndole identificar rápidamente qué es lo más relevante dentro del diseño. Una buena jerarquía convierte textos complejos en piezas ordenadas y fáciles de navegar, lo que resulta esencial en diseño editorial, carteles publicitarios, interfaces digitales y cualquier formato que requiera transmitir información clara.</p>
+
+                    <p>Comprender la tipografía como un sistema permite al diseñador tener control total sobre la comunicación verbal y visual. Cuando las letras se usan con intención, se convierten en un elemento expresivo capaz de transformar completamente el impacto de un proyecto.</p>
+					<br>
+                    <center>
+                        <div class="image-box">
+                            <img src="https://estiloss.com/wp-content/uploads/2024/12/tipografias-para-grabado-laser-de-estiloss-1024x627.jpg" width="650" height="400"/>
+                        </div>
+                    </center>
+					<br>
+                    <div class="section-buttons">
+                        <button class="bottom-btn" onclick="mostrarSeccion('herramientas')">Herramientas Digitales</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('procesos')">Procesos Creativos</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('metodologias')">Metodologías de Trabajo</button>
+                    </div>
+                `,
+
+                herramientas: `
+                    <h2>Herramientas Digitales</h2>
+
+                    <p>El diseño moderno depende en gran medida del dominio de herramientas digitales que permiten concretar ideas con precisión y calidad profesional. Cada programa tiene una función específica que facilita distintos procesos creativos. Comprender sus capacidades permite al diseñador seleccionar la herramienta adecuada para cada etapa del proyecto, optimizando el flujo de trabajo y logrando mejores resultados.</p>
+
+                    <p>Photoshop es fundamental para la edición y manipulación avanzada de imágenes, permitiendo realizar correcciones, composiciones fotográficas y efectos visuales complejos. Illustrator funciona como la base del diseño vectorial y es ideal para logotipos, ilustraciones y gráficos escalables sin pérdida de calidad. Figma ha revolucionado el diseño de interfaces gracias a su funcionamiento colaborativo en línea, permitiendo crear prototipos interactivos y sistemas visuales consistentes.</p>
+
+                    <p>Procreate se ha convertido en una herramienta indispensable para ilustradores contemporáneos, pues ofrece una experiencia natural de dibujo con una variedad inmensa de pinceles. Canva democratiza el diseño al permitir crear piezas visuales sencillas mediante plantillas rápidas sin necesidad de conocimientos avanzados. Blender, por otro lado, es una herramienta de modelado, texturización, animación y renderizado 3D, ampliamente usada en cine, videojuegos y visualización de productos.</p>
+
+                    <p>El diseñador actual no solo debe conocer estas herramientas, sino también integrarlas de manera estratégica. Saber cuándo utilizar cada programa, cómo combinar sus capacidades y cómo crear flujos de trabajo eficientes es esencial para desenvolverse en un mercado competitivo donde la velocidad y calidad son determinantes.</p>
+					<br>
+                    <center>
+                        <div class="image-box">
+                            <img src="https://connecta.partners/wp-content/uploads/2023/05/h1-1024x683.jpg" width="650" height="400"/>
+                        </div>
+                    </center>
+					<br>
+                    <div class="section-buttons">
+                        <button class="bottom-btn" onclick="mostrarSeccion('herramientas')">Herramientas Digitales</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('procesos')">Procesos Creativos</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('metodologias')">Metodologías de Trabajo</button>
+                    </div>
+                `,
+
+                procesos: `
+                    <h2>Procesos Creativos</h2>
+
+                    <p>El proceso creativo es el camino que transforma una idea abstracta en una solución visual concreta. Aunque cada diseñador tiene su propio estilo de trabajo, existen etapas universales que ayudan a ordenar el pensamiento y dar estructura a la creatividad. Comprender estas etapas permite generar ideas más fuertes, justificar decisiones visuales y construir diseños con intención.</p>
+
+                    <p>El proceso normalmente comienza con una lluvia de ideas, donde el objetivo es generar la mayor cantidad posible de conceptos sin juzgarlos. Esta etapa fomenta la libertad creativa y permite explorar posibilidades que en una primera instancia pueden parecer descabelladas pero que luego se transforman en propuestas valiosas. Posteriormente, se desarrolla un moodboard que funciona como una guía visual del proyecto, estableciendo colores, texturas, estilos y referencias que marcan la dirección estética.</p>
+
+                    <p>Los bocetos representan la traducción inicial de las ideas al papel o a lo digital. No buscan perfección, sino explorar la estructura de las propuestas y visualizar alternativas de manera rápida. Tras elegir las mejores, es común avanzar hacia prototipos más detallados que permiten evaluar el funcionamiento real del diseño. Esta etapa resulta esencial para identificar errores, ajustar proporciones y asegurar que la propuesta sea viable.</p>
+
+                    <p>Finalmente, la retroalimentación funciona como una etapa de evaluación donde se reciben comentarios externos que enriquecen el diseño. Esta fase permite corregir, mejorar y perfeccionar la propuesta antes de llegar al resultado final. Los procesos creativos no son lineales: se avanza, se retrocede y se replantean decisiones constantemente. Lo importante es entender que cada etapa aporta claridad y fortalece el proyecto visual.</p>
+					<br>
+                    <center>
+                        <div class="image-box">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyu9vGoE6IllUaBYE0AGAHtfhxjM4dtvO1zg&s" width="650" height="400"/>
+                        </div>
+                    </center>
+					<br>
+                    <div class="section-buttons">
+                        <button class="bottom-btn" onclick="mostrarSeccion('herramientas')">Herramientas Digitales</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('procesos')">Procesos Creativos</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('metodologias')">Metodologías de Trabajo</button>
+                    </div>
+                `,
+
+                metodologias: `
+                    <h2>Metodologías de Trabajo</h2>
+
+                    <p>Las metodologías de trabajo permiten al diseñador organizar sus procesos de manera profesional, eficiente y orientada a resolver necesidades reales. Aunque la creatividad es una parte esencial del diseño, también es necesario contar con métodos que permitan estructurar la toma de decisiones y garantizar que cada proyecto avance de forma clara y ordenada.</p>
+
+                    <p>Design Thinking es una metodología centrada en comprender profundamente a las personas para crear soluciones realmente útiles. Se basa en la empatía, la experimentación y la iteración constante. UX Research, por otro lado, se enfoca en investigar el comportamiento y las necesidades de los usuarios mediante entrevistas, análisis de datos, pruebas de uso y observación directa. Ambas metodologías ayudan a diseñar desde la perspectiva del usuario, no desde suposiciones.</p>
+
+                    <p>El modelo del Doble Diamante divide el proceso en fases de exploración y enfoque, permitiendo desarrollar ideas amplias para luego seleccionar las mejores y convertirlas en soluciones concretas. Esta metodología ayuda a evitar decisiones apresuradas y fomenta la claridad en cada etapa del diseño. La gestión de proyectos también es fundamental, pues permite organizar tareas, administrar tiempos y coordinar equipos mediante herramientas como Trello, Notion o Asana.</p>
+
+                    <p>Las metodologías ágiles, como Scrum y Kanban, promueven un trabajo organizado en ciclos cortos, priorizando resultados constantes y retroalimentación continua. Estas metodologías han transformado la manera en que se desarrollan productos digitales, permitiendo que los equipos evolucionen sus proyectos con flexibilidad y eficiencia. En conjunto, todas estas metodologías ayudan a los diseñadores a trabajar de manera más estratégica, organizada y alineada con las necesidades reales de los usuarios.</p>
+					<br>
+                    <center>
+                        <div class="image-box">
+                            <img src="https://ifeelonline.com/wp-content/uploads/2023/11/ES_Beneficios-de-escoger-una-metodologia-de-trabajo.png" width="650" height="400"/>
+                        </div>
+                    </center>
+					<br>
+                    <div class="section-buttons">
+                        <button class="bottom-btn" onclick="mostrarSeccion('herramientas')">Herramientas Digitales</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('procesos')">Procesos Creativos</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('metodologias')">Metodologías de Trabajo</button>
+                    </div>
+                `,
+				storytelling: `
+                    <h2>Storytelling en parejas: Tema “Diseño Web”</h2>
+					<br>
+					<h2>Equipo:</h2>
+       				 <ul>
+						<li>Guizar Santiago André</li>
+						<li>Troncoso Pérez Oscar Alexis</li>
+					</ul>
+					<h2>Introducción</h2>
+					<p>
+            		Enfocados en la necesidad de un diseño web que trascienda lo funcional, presentamos nuestra propuesta de storytelling (narrativa de marca). 
+					Nuestro objetivo es transformar el sitio web de nuestros clientes de una simple plataforma informativa a una experiencia digital inmersiva y emocional. 
+					Comunicaremos de manera clara, visual y profundamente conectiva cómo cada decisión de diseño contribuye a construir una narrativa de marca coherente que cautiva y genera lealtad en el usuario final.
+        			</p>
+					<center>
+					<div class="image-box">
+                            <img src="IMG1.png" width="325" height="200"/>
+                        </div>
+					</center>
+					
+					<h2>Idea Principal</h2>
+					<p><strong>¿Cuál será la idea principal del tema que pretenden comunicar al usuario final?</strong></p>
+					<p>
+					La idea principal es redefinir la percepción del diseño web. No se trata solo de estética (UI) o usabilidad (UX), sino de la capacidad de contar la historia esencial de la marca y establecer una conexión emocional duradera.
+					</p>
+					<p>
+            		Proponemos que cada elemento del sitio (tipografía, paleta de color, micro-interacciones, texto e imagen) funcione como un recurso narrativo que evoque emociones y alinee la identidad de la marca con las necesidades y aspiraciones del visitante. 
+            		El sitio web es el vehículo de la historia de la marca.
+        			</p>
+					<br>
+
+					<h2>Primera Idea para el Usuario</h2>
+        			<p><strong>Enfoque:</strong> Crear un inicio que inmediatamente posicione al usuario como el protagonista de la historia.</p>
+        			<p>
+            		La página de inicio actuará como el portal de entrada a una aventura transformadora. La primera impresión debe plantear un conflicto o una promesa de solución con la que el visitante se identifique instantáneamente.
+        			</p>
+					<p><strong>Ejemplo de Gancho (Pregunta/Reto):</strong> "¿Tu marca está solo en línea, o está realmente conectando?"</p>
+        			<p><strong>Ejemplo de Gancho (Promesa/Solución):</strong> "Transforma tus ideas en la próxima gran experiencia digital: Comienza tu historia."</p>
+        			<p>
+            		Este tipo de apertura genera un "Contrato Narrativo", despertando empatía y curiosidad, e impulsando al usuario a desplazarse y descubrir el desarrollo de la trama (la solución o el servicio).
+        			</p>
+					<br>
+					<center>
+					<div class="image-box">
+                            <img src="IMG2.png" width="325" height="200"/>
+                        </div>
+					</div>
+					<div class="image-box">
+                            <img src="IMG3.png" width="325" height="200"/>
+                        </div>
+					<div class="image-box">
+                            <img src="IMG4.png" width="325" height="200"/>
+                        </div>
+					</center>
+
+					<h2>Elementos Requeridos para Comprensión</h2>
+					<p><strong>¿Qué elementos requerirán para que el tema sea comprensible?</strong></p>
+        			<ul>
+					<li><strong>Textuales (El Guion):</strong> Titulares Héroe concisos e impactantes. Copywriting persuasivo y emotivo, con un tono cercano y directo que refleje la personalidad de la marca.</li>
+            		<li><strong>Gráficos (El Set y el Estilo):</strong> Identidad Visual Unificada. Uso estratégico de imágenes de alta calidad que ilustren la emoción de la historia. Iconografía que guíe el flujo de la narrativa y paleta de colores con significado psicológico que refuerce el tono del relato.</li>
+            		<li><strong>Audiovisuales (El Clímax):</strong> Cinemagraphs y loops de video sutiles que añaden movimiento y atmósfera. Animaciones explicativas (Motion Graphics) que simplifican procesos complejos y muestran la visión de la marca en acción.</li>
+            		<li><strong>Interactivos (La Participación del Protagonista):</strong> Micro-interacciones significativas, efectos de desplazamiento progresivo (Parallax Scrolling o Reveal), y botones dinámicos que convierten la navegación en una experiencia táctil y activa.</li>
+        			</ul>
+					<br>
+
+					<h2>Explicación del Tema</h2>
+        			<p><strong>¿Cómo explicarán el tema?</strong> Se seguirá la estructura de "Concepto-Ejemplo-Aplicación":</p>
+        			<ul>
+					<li><strong>Conceptualización Fundacional:</strong> Introducción del storytelling en el contexto del diseño UX/UI moderno y su impacto en métricas de negocio (conversión, tiempo en página, recurrencia).</li>
+            		<li><strong>Evidencia de Caso (Best Practices):</strong> Análisis de marcas globales (Apple, Airbnb, Mailchimp) que han dominado la narrativa digital, mostrando cómo su diseño refleja su arco narrativo de marca.</li>
+            		<li><strong>Estudios de Caso Propios y Demostraciones Visuales:</strong> Presentación de wireframes narrativos y prototipos interactivos que muestran la transformación de un diseño estático a una experiencia contada.</li>
+        			</ul>
+					<br>
+					<center>
+					<div class="image-box">
+                            <video width="325" height="200" controls><source src="VID1.mp4"></video>
+                        </div>
+					<div class="image-box">
+                            <video width="325" height="200" controls><source src="VID2.mp4"></video>
+                        </div>
+					</center>
+
+
+					<h2>Recursos Adicionales</h2>
+        			<p><strong>¿Qué otros recursos utilizarán para que el usuario final perciba la información como completa y confiable?</strong></p>
+        			<ul>
+            		<li><strong>Validación Externa:</strong> Citas de expertos en diseño UX/UI y marketing narrativo. Datos sobre efectividad del storytelling en engagement y conversiones.</li>
+            		<li><strong>Prueba Social:</strong> Testimonios de clientes y reseñas estratégicas que refuercen la narrativa.</li>
+            		<li><strong>Recurso Descargable (Lead Magnet):</strong> "Guía de Mapeo Narrativo Web" (Story Mapping Tool) descargable, que resume la metodología paso a paso.</li>
+            		<li><strong>Referencias Académicas:</strong> Referencias APA para establecer base teórica y profesional de la propuesta.</li>
+        			</ul>
+					<br>
+					<center>
+					<div class="image-box">
+                            <img src="IMG5.png" width="325" height="200"/>
+                        </div>
+					</center>
+
+        			<h2>Referencias</h2>
+        			<ul>
+            		<li>Simões, C. (2023, diciembre 4). Tejiendo narrativas digitales: el arte del storytelling en el diseño web. ITDO. <a href="https://www.itdo.com/blog/tejiendo-narrativas-digitales-el-arte-del-storytelling-en-el-diseno-web" target="_blank">https://www.itdo.com/blog/tejiendo-narrativas-digitales-el-arte-del-storytelling-en-el-diseno-web</a></li>
+            		<li>Radovic, A. (2025, abril 25). The power of storytelling in web design for brand engagement. Web Design Basics. <a href="https://www.webdesign.org/the-power-of-storytelling-in-web-design-for-brand-engagement.24050.html" target="_blank">https://www.webdesign.org/the-power-of-storytelling-in-web-design-for-brand-engagement.24050.html</a></li>
+        			</ul>
+                    <div class="section-buttons">
+                        <button class="bottom-btn" onclick="mostrarSeccion('herramientas')">Herramientas Digitales</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('procesos')">Procesos Creativos</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('metodologias')">Metodologías de Trabajo</button>
+                    </div>
+                `,
+            };
+
+            document.getElementById("contenido").innerHTML = secciones[id];
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Wiki de Diseño</div>
+
+        <div class="top-controls">
+            <button class="btn" onclick="mostrarSeccion('inicio')">Inicio</button>
+            <button class="btn" onclick="mostrarSeccion('principios')">Principios</button>
+            <button class="btn" onclick="mostrarSeccion('color')">Color</button>
+            <button class="btn" onclick="mostrarSeccion('tipografia')">Tipografía</button>
+			<button class="btn" onclick="mostrarSeccion('storytelling')">Storytelling</button>
+            <input type="text" placeholder="Buscar..." class="search-bar" />
+        </div>
+    </header>
+
+    <main id="contenido">
+		<h2>Introducción a la Wiki</h2>
+
+                    <p>Este espacio fue creado para funcionar como un punto de referencia completo y accesible para cualquier persona interesada en el diseño visual, sin importar su nivel de experiencia. Su propósito principal es ofrecer explicaciones profundas y claras sobre conceptos fundamentales que construyen la base del diseño moderno. Aquí podrás aprender cómo se estructura una composición, cómo funciona el color, cómo se construyen tipografías efectivas, cómo nacen las ideas y cómo se aplican metodologías reales en estudios profesionales.</p>
+
+                    <p>La intención de este sitio es ayudarte a pensar como diseñador. No solo se busca que aprendas conceptos teóricos, sino que entiendas cómo aplicarlos en situaciones reales donde la comunicación visual es clave. El diseño no consiste solamente en estética: también involucra estrategia, narrativa, intención y una comprensión profunda del comportamiento humano. Cada sección ha sido escrita para que puedas captar la lógica detrás de las decisiones visuales, permitiéndote desarrollar criterio propio y no depender únicamente de tendencias.</p>
+
+                    <p>El contenido también aborda herramientas modernas utilizadas en la industria, desde programas de edición hasta software profesional especializado. Además, se explican procesos creativos que inician desde una idea abstracta hasta convertirse en un proyecto final funcional. Todo este conocimiento pretende darte una formación más completa y ayudarte a construir una visión integral sobre lo que significa diseñar en la actualidad.</p>
+
+                    <center>
+                        <div class="image-box">
+                            <img src="https://picsum.photos/300" />
+                            <p>Exploración visual contemporánea</p>
+                        </div>
+						
+
+                        <div class="image-box">
+                            <img src="https://picsum.photos/301" />
+                            <p>Diseño minimalista aplicado</p>
+                        </div>
+
+                        <div class="image-box">
+                            <img src="https://picsum.photos/302" />
+                            <p>Combos tipográficos experimentales</p>
+                        </div>
+                    </center>
+
+                    <div class="section-buttons">
+                        <button class="bottom-btn" onclick="mostrarSeccion('herramientas')">Herramientas Digitales</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('procesos')">Procesos Creativos</button>
+                        <button class="bottom-btn" onclick="mostrarSeccion('metodologias')">Metodologías de Trabajo</button>
+                    </div>
+    </main>
+
+    <footer>
+        © 2025 — Wiki de Diseño. Todos los derechos reservados.
+    </footer>
+
+</body>
+</html>
